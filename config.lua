@@ -100,6 +100,8 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
+-- vim.g.copilot_assume_mapped = true
+
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
@@ -184,7 +186,7 @@ lvim.plugins = {
   { "jose-elias-alvarez/null-ls.nvim" },
   { "MunifTanjim/prettier.nvim" },
   { "sindrets/diffview.nvim",         requires = "nvim-lua/plenary.nvim" },
-  { "github/copilot.vim" }
+  { "zbirenbaum/copilot.lua" }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
