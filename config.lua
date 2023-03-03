@@ -10,19 +10,23 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save.enabled = false
-lvim.colorscheme = "lunar"
 lvim.format_on_save = true
+lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<Esc>"] = ":noh<CR>"
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<M-h>"] = ":bprev<CR>"
 lvim.keys.normal_mode["<M-l>"] = ":bnext<CR>"
+lvim.keys.normal_mode["h"] = "<Nop>"
+lvim.keys.normal_mode["l"] = "<Nop>"
+lvim.keys.normal_mode["<leader>t"] = ":Telescope<CR>"
+lvim.keys.normal_mode["<leader>r"] = ":Telescope live_grep<CR>"
+-- lvim.keys.insert_mode["<S-CR>"] = "<ESC> O"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -75,6 +79,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.filters.custom = { "^\\.DS_Store$" }
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -176,7 +181,9 @@ lvim.plugins = {
   --   "folke/trouble.nvim",
   --   cmd = "TroubleToggle",
   -- },
-  { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" },
+  { "jose-elias-alvarez/null-ls.nvim" },
+  { "MunifTanjim/prettier.nvim" },
+  { "sindrets/diffview.nvim",         requires = "nvim-lua/plenary.nvim" },
   { "github/copilot.vim" }
 }
 
